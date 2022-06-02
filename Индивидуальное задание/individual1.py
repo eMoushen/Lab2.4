@@ -6,21 +6,9 @@ if __name__ == '__main__':
     D = []
     V = []
     S = []
-    for i in range(7):
-        if i == 0:
-            print('Понедельник')
-        elif i == 1:
-            print('Вторник')
-        elif i == 2:
-            print('Среда')
-        elif i == 3:
-            print('Четверг')
-        elif i == 4:
-            print('Пятница')
-        elif i == 5:
-            print('Суббота')
-        else:
-            print('Воскресенье')
+    days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
+    for i, day in enumerate(days):
+        print(i, day)
 
         U.append(int(input('Введите значение утренней температуры: ')))
         D.append(int(input('Введите значение дневной  температуры: ')))
