@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import sys
 
 if __name__ == '__main__':
-    li = []
+    li = list(map(int, input("Введите элементы списка: ").split()))
+    if not li:
+        print("Заданный список пуст", file=sys.stderr)
+        exit(1)
+
     m = 1
     c = 0
     k = 0
 
-    n = int(input('Введите количество чисел в списке: '))
-    print('Введите числа в список: ')
-    for i in range(n):
-        li.append(int(input()))
-        if (i+1) % 2 == 0:
-            m *= li[i]
+    for i, item in enumerate(li):
+        if (i + 1) % 2 == 0:
+            m *= item
 
     for i in li:
         if i == 0:
@@ -23,6 +25,6 @@ if __name__ == '__main__':
         if k == 1:
             c += i
 
-    li.sort(reverse=True)
+    li.sort(key=lambda x: x < 0)
     print('Cумма между нулевыми элементами:', c, 'Произведение четных:', m)
     print('Преобразованный список:', li)
